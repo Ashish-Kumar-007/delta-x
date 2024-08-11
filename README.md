@@ -1,40 +1,69 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Delta-X Rewards
+
+Delta-X Rewards is a decentralized rewards system that grants users Delta-X tokens based on their wallet transactions. By registering their wallet address on our platform, users become eligible to earn Delta-X tokens for every transaction they make.
+
+## Problem Solved
+
+### Encouraging Wallet Usage
+
+One of the challenges in the decentralized finance (DeFi) ecosystem is incentivizing users to engage more frequently with their wallets. Often, users may not be motivated to make transactions unless there's a clear benefit. Delta-X Rewards solves this problem by offering a tangible incentive: a 10% reward in Delta-X tokens for every transaction made from a registered wallet.
+
+By promoting the registration of wallet addresses on our platform, we encourage users to interact with their wallets more often. This not only benefits the user by allowing them to accumulate rewards, but it also helps increase overall activity within the DeFi space.
+
+### Future Utility of Delta-X Tokens
+
+As the Delta-X ecosystem grows, users will have the opportunity to use their earned tokens across various DeFi platforms. Whether it’s staking, lending, or providing liquidity, the Delta-X tokens earned through transactions will have real value and utility in the broader DeFi ecosystem. This creates a compelling reason for users to register their wallet addresses and participate in the program, knowing that their rewards will have future benefits.
+
+## Features
+
+- **Automatic Token Rewards**: Earn 10% of the transaction amount in Delta-X tokens for every transaction made from your registered wallet.
+- **Cross-Chain Tracking**: We use Chainlink's CCIP (Cross-Chain Interoperability Protocol) to monitor and reward cross-chain transactions.
+- **Real-Time Monitoring**: Wallet activity is tracked through Alchemy's WebSocket Service (WSS) for real-time updates and token distribution.
+
+## How It Works
+
+1. **Register Your Wallet**: Users must first register their wallet address on our website.
+2. **Track Transactions**: Once registered, the wallet is tracked using Alchemy's WSS. All transactions, including cross-chain transactions, are monitored.
+3. **Earn Delta-X Tokens**: For every transaction, 10% of the transaction amount is automatically awarded to the wallet in the form of Delta-X tokens.
+
+## Future Implementation
+
+Due to some urgent work, the full implementation of the features described above has been delayed. However, the following features are planned for future updates:
+
+- **Integration of Chainlink CCIP**: The cross-chain tracking feature will be implemented to ensure that transactions made on different blockchains are properly rewarded with Delta-X tokens.
+- **Automated Token Distribution**: The smart contract responsible for awarding Delta-X tokens will be finalized and deployed, allowing for seamless and automatic reward distribution.
+- **Enhanced User Interface**: A more user-friendly interface will be developed for wallet registration and transaction tracking.
+
+Stay tuned for updates, as these features will be rolled out in the coming weeks. Your patience and understanding are appreciated as we work to deliver the best possible experience.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Metamask Wallet**: Users must have a Metamask wallet to register and receive Delta-X tokens.
+- **Optimism Testnet Network**: Ensure your wallet is connected to the Optimism testnet network.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Technical Overview
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### Smart Contract
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+- The Delta-X token is an ERC-20 token deployed on the Ethereum network.
+- The smart contract is responsible for issuing rewards based on the transaction data received from Alchemy and Chainlink.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+### Alchemy WebSocket Service
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Alchemy WSS is used to subscribe to real-time updates for registered wallet addresses.
+- The service listens for transactions and triggers the reward mechanism whenever a transaction is detected.
 
-## Learn More
+### Chainlink CCIP
 
-To learn more about Next.js, take a look at the following resources:
+- Chainlink's Cross-Chain Interoperability Protocol (CCIP) is used to check and validate cross-chain transactions.
+- This ensures that users are rewarded for transactions made across different blockchains.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Contributing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+We welcome contributions from the community. Please feel free to open issues, submit pull requests, or suggest improvements.
 
-## Deploy on Vercel
+## License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
